@@ -1,0 +1,15 @@
+.nav-item {
+    border-image: url("../images/ui/border.jpg") 20 stretch;
+    border-width: 10px;
+    border-style: solid;
+    padding: 0 15px;
+}
+
+.navbar {
+    border-bottom: 1px solid white;
+}
+
+.nav-icon {
+    height: 40px;
+    width: 40px;
+}

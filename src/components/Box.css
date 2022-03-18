@@ -1,0 +1,6 @@
+
+.box {
+    border-image: url("../images/ui/border.jpg") 20 stretch;
+    border-width: 10px;
+    border-style: solid;
+}
