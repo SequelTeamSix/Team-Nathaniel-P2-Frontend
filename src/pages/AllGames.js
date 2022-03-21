@@ -41,12 +41,9 @@ function AllGames(props) {
       <div className="row">
         {games.map((game) => (
 
-            <Link key={game.gameId} className="col-12 col-sm-6 col-md-3 link-decoration" 
-              to={{
-                pathname: "/game/" + game.title,
-            }} >
+            <Link key={game.gameId} className="col-12 col-sm-6 col-md-3 link-decoration" to={"/game/" + game.title} >
                 <Box>
-                    <img src={game.boxArt} className="games-image" />
+                    <img src={game.boxArt} className="game-image" />
                     <span className='game-name'>{game.title}</span>
                 </Box>
             </Link>
