@@ -2,7 +2,12 @@ import {Route} from 'react-router-dom';
 import './App.css';
 
 import Character from "./pages/Character";
+import Characters from './pages/Characters';
+import Serieses from "./pages/Serieses";
 import NavBar from "./components/NavBar";
+import Series from "./pages/Series";
+import Consoles from "./pages/Consoles";
+import Console from "./pages/Console";
 
 /* Importing AllGames & Game- PV 3/18/22 */
 import AllGames from "./pages/AllGames";
@@ -12,23 +17,27 @@ function App() {
   return (
     <div className="App">
         <NavBar />
-        <Route path='/character'>
-            <Character />
+        <Route exact path='/series'>
+            <Serieses />
         </Route>
+        <Route path='/series/:seriesName' component={Series} />
+        <Route exact path='/character'>
+            <Characters />
+        </Route>
+        <Route path='/character/:characterName' component={Character} />
+        <Route exact path='/console' >
+            <Consoles />
+        </Route>
+        <Route path='/console/:consoleName' component={Console} />
 
-        {/**********************************************************************/}
-        {/* Adding all games page - PV 3/19/22 */}
-        <Route path='/allgames'>
+        <Route path='/game'>
             <AllGames />
         </Route>
-        {/**********************************************************************/}
 
-        {/**********************************************************************/}
-        {/* Testing single game page - PV 3/20/22 */}
-        <Route path='/game'>
+        <Route path='/game/:gameName'>
             <Game />
         </Route>
-        {/**********************************************************************/}
+
 
     </div>
   );
