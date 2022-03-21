@@ -5,8 +5,27 @@
     padding: 0 15px;
 }
 
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: deeppink;
+}
+
+.nav-link:active {
+    color: lime;
+}
+
+
+
 .navbar {
     border-bottom: 1px solid white;
+}
+
+.active {
+    font-weight: bolder;
+    color: gold;
 }
 
 .nav-icon {

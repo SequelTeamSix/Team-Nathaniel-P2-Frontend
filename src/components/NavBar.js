@@ -1,6 +1,6 @@
 import './NavBar.css';
 
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {useState} from 'react';
 import icon from '../images/ui/nav-bar-icon.jpg';
 
@@ -20,10 +20,10 @@ function NavBar() {
                 </button>
                 <div className={'collapse navbar-collapse ' + show} id="navbarCollapse">
                     <ul className='navbar-nav'>
-                        <li className='nav-item'><Link className='nav-link' to='/character'> Games</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/character'>  Consoles</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/character'> Series</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/character'> Characters</Link></li>
+                        <li className='nav-item'><NavLink activeClassName='active' className='nav-link' to='/game'> Games</NavLink></li>
+                        <li className='nav-item'><NavLink activeClassName='active' className='nav-link' to='/console'>  Consoles</NavLink></li>
+                        <li className='nav-item'><NavLink activeClassName='active' className='nav-link' to='/series'> Series</NavLink></li>
+                        <li className='nav-item'><NavLink activeClassName='active' className='nav-link' to='/character'> Characters</NavLink></li>
                     </ul>
                 </div>
             </div>

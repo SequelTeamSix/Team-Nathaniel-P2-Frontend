@@ -1,0 +1,9 @@
+.cons-image {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cons-name {
+    font-size: 2rem;
+    font-weight: bold;
+}
