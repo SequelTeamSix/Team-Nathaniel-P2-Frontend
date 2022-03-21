@@ -5,15 +5,9 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 
-import {Link, Route} from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 
 function AllGames(props) {
-  const [width, updateWidth] = useState(window.innerWidth);
-  window.addEventListener("resize", changeSize);
-
-  function changeSize() {
-    updateWidth(window.innerWidth);
-  }
 
   const [games, setGames] = useState([]);
 
@@ -46,13 +40,14 @@ function AllGames(props) {
       </div>
       <div className="row">
         {games.map((game) => (
-            
-            <Link to={"/game"} key={game.gameId} className="col-12 col-sm-6 col-md-3">
+
+            <Link key={game.gameId} className="col-12 col-sm-6 col-md-3 link-decoration" to={"/game/" + game.title} >
                 <Box>
-                    <img src={game.boxArt} className="games-image" />
+                    <img src={game.boxArt} className="game-image" />
+                    <span className='game-name'>{game.title}</span>
                 </Box>
             </Link>
-            
+
         ))}
       </div>
     </div>
@@ -60,3 +55,4 @@ function AllGames(props) {
 }
 
 export default AllGames;
+

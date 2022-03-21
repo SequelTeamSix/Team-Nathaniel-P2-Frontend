@@ -17,20 +17,26 @@ function App() {
   return (
     <div className="App">
         <NavBar />
+
         <Route exact path='/series'>
             <Serieses />
         </Route>
+
         <Route path='/series/:seriesName' component={Series} />
+
         <Route exact path='/character'>
             <Characters />
         </Route>
+
         <Route path='/character/:characterName' component={Character} />
+
         <Route exact path='/console' >
             <Consoles />
         </Route>
+
         <Route path='/console/:consoleName' component={Console} />
 
-        <Route path='/game'>
+        <Route path='/allgames'>
             <AllGames />
         </Route>
 

@@ -1,9 +1,5 @@
-.game-link {
-    display: flex;
-}
-
-.character-image {
-    width: 200px;
+.game-image {
+    width: 90%;
 }
 
 .name-content{
@@ -14,7 +10,13 @@
     margin-top: 20px;
 }
 
-.series-image {
-    box-sizing: border-box;
-    width: 100%;
+.game-name {
+    font-size: 1rem;
+    font-weight: bold;
 }
+
+.link-decoration {
+    text-decoration: none;
+    color: white;
+}
+
