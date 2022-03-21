@@ -1,0 +1,20 @@
+.game-link {
+    display: flex;
+}
+
+.character-image {
+    width: 200px;
+}
+
+.name-content{
+    text-align: left;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.series-image {
+    box-sizing: border-box;
+    width: 100%;
+}
