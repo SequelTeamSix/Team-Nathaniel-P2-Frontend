@@ -20,6 +20,7 @@ function NavBar() {
                 </button>
                 <div className={'collapse navbar-collapse ' + show} id="navbarCollapse">
                     <ul className='navbar-nav'>
+                        <li className='nav-logo'><Link className='nav-link' to='/home'><img src={require("../images/icons/icons8-mario-8-bit-50-white.png")}/></Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/allgames'> Games</Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/character'>  Consoles</Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/character'> Series</Link></li>

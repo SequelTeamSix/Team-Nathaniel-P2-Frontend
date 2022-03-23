@@ -17,8 +17,6 @@
     color: lime;
 }
 
-
-
 .navbar {
     border-bottom: 1px solid white;
 }
@@ -31,4 +29,12 @@
 .nav-icon {
     height: 40px;
     width: 40px;
+}
+
+.nav-logo {
+    margin-right: 1rem;
+}
+
+.nav-logo:hover {
+    opacity: .7;
 }

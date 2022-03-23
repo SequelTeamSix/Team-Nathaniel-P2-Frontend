@@ -1,4 +1,4 @@
-import {Route} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 import './App.css';
 
 import Character from "./pages/Character";
@@ -9,14 +9,26 @@ import Series from "./pages/Series";
 import Consoles from "./pages/Consoles";
 import Console from "./pages/Console";
 
-/* Importing AllGames & Game- PV 3/18/22 */
 import AllGames from "./pages/AllGames";
 import Game from "./pages/Game";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
         <NavBar />
+
+        <Route exact path="/"
+                render={() => {
+                    return (
+                      <Redirect to="/home" /> 
+                    )
+                }}
+        />
+
+        <Route exact path='/home'>
+            <Home />
+        </Route>
 
         <Route exact path='/series'>
             <Serieses />
