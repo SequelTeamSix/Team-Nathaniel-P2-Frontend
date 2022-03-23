@@ -20,7 +20,7 @@ export default class Serieses extends React.Component {
     render() {
 
         return(
-            <div className='container'>
+            <div className='container vh-100'>
                 <div className='row'>
                     {this.state.serieses.map(series => ( <Link key={series.seriesId} to={'/series/'+series.name} className='col-6 col-md-4 col-lg-2'>
                         <Box className='series-box d-flex flex-column justify-content-center'><img src={series.logo} className='serieses-image' />{series.name}</Box>

@@ -3,7 +3,12 @@
     width: 100%;
 }
 
-.cons-name {
-    font-size: 2rem;
-    font-weight: bold;
+.cons-box {
+    width: 300px;
+    height: 100%;
+}
+
+.console-link {
+    text-decoration: none;
+    color: white;
 }
