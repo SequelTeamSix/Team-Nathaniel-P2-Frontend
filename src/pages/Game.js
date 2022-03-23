@@ -9,11 +9,15 @@ import axios from "axios";
 
 import { useParams, useLocation } from 'react-router-dom';
 
+import { useDispatch } from "react-redux";
+
 function Game(props) {
 
   const [game, setGame] = useState({console: []});
 
   const { gameName } = useParams();
+
+  const dispatch = useDispatch();
 
   console.log("Props Paramter Value - " + gameName);
 
@@ -39,6 +43,9 @@ function Game(props) {
     };
   }, []);
 
+  function addToCart() {
+      dispatch({type: 'addToCart', gamePurchase: {game: game, quantity: 1}})
+  }
 
   return (
 
@@ -56,7 +63,8 @@ function Game(props) {
                         <p><strong>Game Price:</strong> ${game.gamePrice}</p>
                         <p><strong>Number of Players:</strong> {game.numPlayers}</p>
                         <p><strong>Online Multiplayer:</strong> {game.online ? 'True' : 'False'}</p>
-                        <p><strong>Console:</strong> {game.console[0].consoleName}</p>
+                        {/*<p><strong>Console:</strong> {game.console[0].consoleName}</p>*/}
+                        <span onClick={addToCart}><Box>Add to Cart</Box></span>
                     </div>
 
                 </div>
