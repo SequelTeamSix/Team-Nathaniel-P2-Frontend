@@ -34,17 +34,17 @@ function AllGames(props) {
   }, []);
 
   return (
-    <div className="container vh-100">
+    <div className="container">
       <div className="row">
         <h1>All Games</h1>
       </div>
       <div className="row">
         {games.map((game) => (
 
-            <Link key={game.gameId} className="col-12 col-sm-6 col-md-3 link-decoration" to={"/game/" + game.title} >
-                <Box>
+            <Link key={game.gameId} className="col-12 col-sm-6 col-md-3 mt-4 link-decoration" to={"/game/" + game.title} >
+                <Box className='allGames-box d-flex flex-column justify-content-center'>
                     <img src={game.boxArt} className="game-image" />
-                    <span className='game-name'>{game.title}</span>
+                    <span className='game-name mt-2'>{game.title}</span>
                 </Box>
             </Link>
 

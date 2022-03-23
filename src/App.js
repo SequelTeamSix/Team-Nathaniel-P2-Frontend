@@ -18,6 +18,7 @@ function App() {
     <div className="App">
         <NavBar />
 
+        {/* Adding landing page - PV*/}
         <Route exact path="/"
                 render={() => {
                     return (
@@ -29,6 +30,7 @@ function App() {
         <Route exact path='/home'>
             <Home />
         </Route>
+        {/****************************/}
 
         <Route exact path='/series'>
             <Serieses />
