@@ -16,7 +16,7 @@ export default class Character extends React.Component {
 
      componentDidMount = () => {
         let name = this.props.match.params.characterName
-         fetch('https://teamnathanielrevatureproject2.azurewebsites.net/CharacterName/'+name).then(response => {
+         fetch('https://teamnathanielrevatureproject2.azurewebsites.net/characterName/'+name).then(response => {
              return response.json();
          }).then(data => {
              this.setState({character: data});
