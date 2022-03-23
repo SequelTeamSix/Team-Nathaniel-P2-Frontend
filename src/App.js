@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar";
 import Series from "./pages/Series";
 import Consoles from "./pages/Consoles";
 import Console from "./pages/Console";
+import Register from './pages/Register';
+import Login from './pages/Login';
 
 /* Importing AllGames & Game- PV 3/18/22 */
 import AllGames from "./pages/AllGames";
@@ -36,14 +38,20 @@ function App() {
 
         <Route path='/console/:consoleName' component={Console} />
 
-        <Route path='/allgames'>
+        <Route exact path='/game'>
             <AllGames />
         </Route>
 
         <Route path='/game/:gameName'>
             <Game />
         </Route>
+        <Route path='/login'>
+            <Login />
+        </Route>
 
+        <Route path='/register' >
+            <Register />
+        </Route>
 
     </div>
   );
