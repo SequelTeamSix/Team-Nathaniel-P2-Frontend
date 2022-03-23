@@ -92,7 +92,9 @@ function Game(props) {
                 </Box>
               </Link>
             ))}
+
           </div>
+          <span onClick={addToCart}><Box>Add to Cart</Box></span>
         </div>
       </div>
     </div>
