@@ -4,15 +4,17 @@ import Box from "../components/Box";
 export default class Console extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {console: {consoleName: '', features: [], games: [], releaseDate: ''}}
+        this.state = {console: {consoleName: '', consoleFeature: [], game: [], releaseDate: ''}}
     }
 
     componentDidMount() {
         let name = this.props.match.params.consoleName
-        fetch('https://teamnathanielrevatureproject2.azurewebsites.net/consoleName'+name).then(response => {
+        fetch('https://teamnathanielrevatureproject2.azurewebsites.net/consoleName/'+name).then(response => {
             return response.json();
         }).then(data => {
-            this.state.console = data
+            console.log(data);
+            this.setState({console: data});
+            console.log(this.state);
             // for (let x = 0; x < data.features.length; x++) {
             //     if(data.features[x]) {
             //
@@ -45,7 +47,7 @@ export default class Console extends React.Component {
                 <div className='row'>
                     <h3>Features:</h3>
                     <ul>
-                    {this.state.console.features.map(feature => (<li key={feature.consoleFeatureId}>
+                    {this.state.console.consoleFeature.map(feature => (<li key={feature.consoleFeatureId}>
                         <span>{feature.title}</span>: {feature.body}
                     </li>))}
                     </ul>
@@ -54,7 +56,7 @@ export default class Console extends React.Component {
                     Games
                 </div>
                 <div className='row'>
-                    {this.state.console.games.map(game => (<Box>
+                    {this.state.console.game.map(game => (<Box>
                         <img src={game.boxArt} /><span>{game.title}</span> </Box>))}
                 </div>
             </div>
