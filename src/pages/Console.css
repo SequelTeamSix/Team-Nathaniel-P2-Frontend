@@ -1,0 +1,25 @@
+.game-image {
+    width: 90%;
+}
+
+.name-content{
+    text-align: left;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.game-name {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.link-decoration {
+    text-decoration: none;
+    color: white;
+}
+
+.allGames-box {
+    height: 100%;
+}

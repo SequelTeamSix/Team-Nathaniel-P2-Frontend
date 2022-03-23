@@ -7,6 +7,9 @@ import { useState } from "react";
 
 import { Link } from 'react-router-dom';
 
+import starsSprite from "../images/icons/5-stars-pixel.png";
+import bobombSprite from "../images/characters/bob-omb-v2.png";
+
 function Home(props) {
     const [width, updateWidth] = useState(window.innerWidth);
     window.addEventListener('resize', changeSize);
@@ -30,11 +33,12 @@ function Home(props) {
                     <img src='https://upload.wikimedia.org/wikipedia/en/thumb/8/89/SuperMarioRPGSNESCoverArtUS.jpg/220px-SuperMarioRPGSNESCoverArtUS.jpg' className='mario-boxart'  alt='super mario rpg' />
                 </Link>
             </div>
+            
             <div className='row d-flex justify-content-between mario-section'>  
                 <div className='col-6 mt-3 mario-title '>
                     <h2>Super Mario RPG:</h2>
                     <p>Legend of the Seven Stars</p>
-                    <img src={require("../images/icons/5-stars-pixel.png")} width='200px' alt='5 stars' /><br/>
+                    <img src={starsSprite} width='200px' alt='5 stars' /><br/>
                     <button className="mt-5">Add to Cart</button>
                 </div>    
                 <img src={require("../images/characters/mario-jumping.png")} className='mario-image' alt='mario' />
@@ -43,29 +47,29 @@ function Home(props) {
 
             <div  className='row gap-3 justify-content-evenly align-items-end retro-deals-section'>
                 <div class='d-flex justify-content-evenly align-items-center mb-5'>
-                    <img src={require("../images/characters/bob-omb-v2.png")} className='bobomb-img' alt='bob-omb' />
+                    <img src={bobombSprite} className='bobomb-img' alt='bob-omb' />
                     <h2>Bob-omb Deals</h2>
-                    <img src={require("../images/characters/bob-omb-v2.png")} className='bobomb-img img-flip' alt='bob-omb' />
+                    <img src={bobombSprite} className='bobomb-img img-flip' alt='bob-omb' />
                 </div>
                 <Box className='col box-deal'>
                     <img src={require("../images/consoles/atari-2600.png")} className='retro-deals-image' alt='atari 2600' />
                     <p>Atari 2600</p>
                     <p>$70.00</p>
-                    <img src={require("../images/icons/5-stars-pixel.png")} className='stars-image' alt='5 stars' /><br/>
+                    <img src={starsSprite} className='stars-image' alt='5 stars' /><br/>
                     <button>Add to Cart</button>
                 </Box>
                 <Box className='col box-deal'>
                     <img src={require("../images/consoles/nes-console.png")} className='retro-deals-image' alt='nes' />
                     <p>NES</p>
                     <p>$150.00</p>
-                    <img src={require("../images/icons/5-stars-pixel.png")} className='stars-image' alt='5 stars' /><br/>
+                    <img src={starsSprite} className='stars-image' alt='5 stars' /><br/>
                     <button>Add to Cart</button>
                 </Box>
                 <Box className='col box-deal'>
                     <img src={require("../images/consoles/atari-2600.png")} className='retro-deals-image' alt='atari 2600' />
                     <p>Atari 2600</p>
                     <p>$70.00</p>
-                    <img src={require("../images/icons/5-stars-pixel.png")} className='stars-image' alt='5 stars' /><br/>
+                    <img src={starsSprite} className='stars-image' alt='5 stars' /><br/>
                     <button>Add to Cart</button>
                 </Box>
             </div>
