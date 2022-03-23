@@ -1,0 +1,52 @@
+.game-image {
+    width: 100%;
+}
+
+.name-content{
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.series-image {
+    box-sizing: border-box;
+    width: 100%;
+    height: 75%;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.retro-deals-section {
+    height: 100%;
+    margin-top: 10rem;
+}
+
+.box-deal {
+    box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+}
+
+.retro-deals-image {
+    box-sizing: border-box;
+    width: 100%;
+    height: 60%;
+}
+
+.bobomb-img {
+    width: 300px;
+    height: 100px;
+}
+
+.img-flip {
+    transform: scaleX(-1);
+}
+
+.stars-image {
+    width: 100px;
+}
+
