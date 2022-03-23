@@ -6,13 +6,11 @@ import * as React from 'react';
 export default class Character extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {width: 0,
+        this.state = {
             character: {characterName: '', description: '', image: '', catchPhrase: ''}};
     }
 
-    changeSize = () => {
-        this.setState({width: window.innerWidth});
-     }
+
 
      componentDidMount = () => {
         let name = this.props.match.params.characterName

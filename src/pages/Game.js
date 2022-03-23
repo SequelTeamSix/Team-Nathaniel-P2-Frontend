@@ -11,7 +11,7 @@ import { useParams, useLocation } from 'react-router-dom';
 
 function Game(props) {
 
-  const [game, setGame] = useState({});
+  const [game, setGame] = useState({console: []});
 
   const { gameName } = useParams();
 
@@ -56,7 +56,7 @@ function Game(props) {
                         <p><strong>Game Price:</strong> ${game.gamePrice}</p>
                         <p><strong>Number of Players:</strong> {game.numPlayers}</p>
                         <p><strong>Online Multiplayer:</strong> {game.online ? 'True' : 'False'}</p>
-                        <p><strong>Console:</strong> {game.console}</p>
+                        <p><strong>Console:</strong> {game.console[0].consoleName}</p>
                     </div>
 
                 </div>

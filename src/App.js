@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import AllGames from "./pages/AllGames";
 import Game from "./pages/Game";
 import Home from "./pages/Home";
+import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   return (
@@ -63,6 +64,10 @@ function App() {
 
         <Route path='/register' >
             <Register />
+        </Route>
+
+        <Route path='/shoppingCart' >
+            <ShoppingCart />
         </Route>
 
     </div>

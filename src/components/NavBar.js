@@ -5,6 +5,7 @@ import {useState} from 'react';
 import icon from '../images/ui/nav-bar-icon.jpg';
 import { useSelector, useDispatch } from "react-redux";
 import loginIcon from '../images/ui/login-icon.jpg';
+import Box from "./Box";
 
 function NavBar() {
     const [show, updateShow] = useState('');
@@ -17,13 +18,21 @@ function NavBar() {
     function showBar() {
         updateShow(show === '' ? 'show' : '');
     }
+
+    function logout() {
+        dispatch({type: 'logout'})
+    }
+
     let userContent = '';
 
     function getUserContentButton() {
         if (Object.keys(user).length === 0){
-            return <Link to='/login'><img src={loginIcon} />  </Link>
+            return <Link to='/login' className='nav-link'>
+
+                Login
+            </Link>
         }else {
-            return <span>Logout</span>
+            return <div onClick={logout} className='nav-link'>Logout</div>
         }
     }
 
@@ -45,6 +54,7 @@ function NavBar() {
                     </ul>
                 </div>
                 <ul className='navbar-nav ml-auto'>
+                    <li className='nav-item'><Link className='nav-link' to='/shoppingCart'>My Cart</Link></li>
                     <li className='nav-item'>
                         {getUserContentButton()}
 

@@ -29,7 +29,7 @@ function Home(props) {
             </div>
 
             <div  className='row gap-3 justify-content-evenly align-items-end retro-deals-section'>
-                <div class='d-flex justify-content-evenly align-items-center mb-5'>
+                <div className='d-flex justify-content-evenly align-items-center mb-5'>
                     <img src={require("../images/characters/bob-omb-v2.png")} className='bobomb-img' alt='bob-omb' />
                     <h2>Bob-omb Deals</h2>
                     <img src={require("../images/characters/bob-omb-v2.png")} className='bobomb-img img-flip' alt='bob-omb' />

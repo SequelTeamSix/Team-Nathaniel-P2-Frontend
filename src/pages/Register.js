@@ -36,7 +36,7 @@ function Register () {
                 return response.json();
         }).then(data => {
             dispatch({type: 'login', user: data});
-            history.push('/game');
+            history.push('/home');
         })
     }
 
