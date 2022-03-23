@@ -6,7 +6,7 @@ export default class Series extends React.Component {
     constructor(props) {
         super(props);
         this.state = {width: 0,
-            series: {name: '', description: '', image: ''}};
+            series: {name: '', description: '', image: '', logo: ''}};
     }
 
     componentDidMount = () => {
@@ -24,7 +24,7 @@ export default class Series extends React.Component {
             <div className='container'>
                 <div className='row'>
                     <Box>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Super_Mario_Bros._Logo.svg/800px-Super_Mario_Bros._Logo.svg.png?20140516002826' className='series-image' />
+                        <img src={this.state.series.logo} className='series-image' />
                     </Box>
                 </div>
                 <div className='row'>

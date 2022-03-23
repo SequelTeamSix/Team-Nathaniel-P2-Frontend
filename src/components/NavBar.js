@@ -6,6 +6,11 @@ import icon from '../images/ui/nav-bar-icon.jpg';
 import { useSelector, useDispatch } from "react-redux";
 import loginIcon from '../images/ui/login-icon.jpg';
 
+import userIcon from '../images/icons/pixel-user-icon-white.png';
+import cartIcon from '../images/icons/pixel-cart-white.png';
+import logoIcon from '../images/icons/icons8-mario-8-bit-50-white.png';
+import titleIcon from '../images/icons/revature-retro-logo-orange.png';
+
 function NavBar() {
     const [show, updateShow] = useState('');
 
@@ -21,9 +26,15 @@ function NavBar() {
 
     function getUserContentButton() {
         if (Object.keys(user).length === 0){
-            return <Link to='/login'><img src={loginIcon} />  </Link>
+            return <Link to='/login'><img src={loginIcon} className='user-icon' />  </Link>
         }else {
             return <span>Logout</span>
+        }
+    }
+
+    function getUserCartButton() {
+        if (Object.keys(user).length === 0){
+            return <Link to='/login'><img src={cartIcon} height='50px' className='user-icon'/>  </Link>
         }
     }
 
@@ -37,17 +48,19 @@ function NavBar() {
                 </button>
                 <div className={'collapse navbar-collapse ' + show} id="navbarCollapse">
                     <ul className='navbar-nav'>
-                        <li className='nav-logo'><Link className='nav-link' to='/home'><img src={require("../images/icons/icons8-mario-8-bit-50-white.png")}/></Link></li>
+                        <li className='nav-logo'><Link className='nav-link' to='/home'><img width='150px' src={titleIcon} /></Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/game'> Games</Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/console'>  Consoles</Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/series'> Series</Link></li>
                         <li className='nav-item'><Link className='nav-link' to='/character'> Characters</Link></li>
                     </ul>
                 </div>
-                <ul className='navbar-nav ml-auto'>
-                    <li className='nav-item'>
+                <ul className='navbar-nav ml-auto d-flex align-items-center'>
+                    <li className='user-item'>
+                        {getUserCartButton()}
+                    </li>
+                    <li className='user-item'>
                         {getUserContentButton()}
-
                     </li>
                 </ul>
             </div>
