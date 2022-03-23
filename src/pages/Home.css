@@ -10,12 +10,6 @@
     text-align: center;
 }
 
-.series-image {
-    box-sizing: border-box;
-    width: 100%;
-    height: 75%;
-}
-
 .row {
     margin-top: 20px;
 }
@@ -50,3 +44,36 @@
     width: 100px;
 }
 
+.mario-pipe-image {
+    width: 450px;
+    z-index: 5;
+}
+
+.mario-rpg-image {
+    width: 350px;
+    height: 225px;
+    position: absolute;
+    left: 125px;
+    animation-name: moveRight;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    /*animation-fill-mode: forwards;*/
+}
+
+.mario-boxart {
+    width: 350px;
+    height: 225px;
+}
+
+@keyframes moveRight {
+    0% {left: 125px}
+    20% {left: 250px}
+    40% {left: 325px}
+    60% {left: 400px}
+    80% {left: 475px}
+    100% {left: 550px}
+}
+
+.mario-image {
+    width: 250px;
+}
