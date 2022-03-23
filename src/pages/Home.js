@@ -17,7 +17,9 @@ function Home(props) {
 
     return (
         <div className='container'>
-
+            <div>
+                
+            </div>
             <div className='row mt-5'>
                 <h1>Featured Product</h1>
             </div>
