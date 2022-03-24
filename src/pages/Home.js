@@ -14,6 +14,7 @@ import marioSprite from "../images/characters/mario-jumping.png";
 import megamanSprite from "../images/characters/megaman-jumping.png";
 import bulletSprite from "../images/characters/megaman-bullet.png";
 import megamanGame from "../images/boxarts/megaman2-box.png";
+import snakeSprite from "../images/characters/snake-reverse.png";
 
 import { useDispatch } from "react-redux";
 
@@ -111,36 +112,33 @@ function Home(props) {
         </Box>
       </div>
 
-      <h2 className='mt-5'>Ethan's Snake Game</h2>
+      <h2 className="mt-5">Ethan's Snake Game</h2>
 
-      <div className='row snake-section'>
-            <Snake className='snake-game'/>
+      <div className='snake-section'>
+        
+        <div className='row snake-game'>
+          <Snake />
         </div>
+        <img src={snakeSprite} />
+        
+      </div>
 
-      <div className="row d-flex justify-content-between megaman-section">
+      <div className="row d-flex justify-content-between megaman-section pb-5">
         <div className="col-md-4 d-flex align-items-center">
-          <img
-            src={megamanSprite}
-            className="megaman-image"
-          />
-          <img src={bulletSprite} className='bullet-image' />
+          <img src={megamanSprite} className="megaman-image" />
+          <img src={bulletSprite} className="bullet-image" />
         </div>
         <div className="col-md-4 d-flex flex-column align-items-center justify-content-center">
           <MegamanBox>
             <Link to={"/game/" + "Mega Man 2"}>
-              <img
-                src={megamanGame}
-                className="game-image"
-                alt="megaman 2"
-              />
+              <img src={megamanGame} className="game-image" alt="megaman 2" />
             </Link>
           </MegamanBox>
         </div>
       </div>
-        
-        
-        
-      
+      <div className='row'>
+
+      </div>
     </div>
   );
 }
