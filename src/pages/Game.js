@@ -94,7 +94,7 @@ function Game(props) {
             ))}
 
           </div>
-          <span onClick={addToCart}><Box>Add to Cart</Box></span>
+          <span onClick={addToCart}><Box className='add-cart-button'>Add to Cart</Box></span>
         </div>
       </div>
     </div>

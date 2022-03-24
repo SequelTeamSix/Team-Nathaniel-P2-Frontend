@@ -10,3 +10,8 @@
 .consoles-section {
     margin-left: 2rem;
 }
+
+.add-cart-button:hover {
+    color: lime;
+    cursor: pointer;
+}
