@@ -1,31 +1,39 @@
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
 import ShoppingCartItem from "../components/ShoppingCartItem";
+import Box from "../components/Box";
 
 
 function ShoppingCart() {
     const shoppingCart = useSelector((state) => state.shoppingCart);
+    const user = useSelector((state) => state.user);
 
-    function cartContents() {
+    const dispatch = useDispatch();
 
-        if(shoppingCart.length === 0) {
-            return <h2>Nothing in the cart</h2>
-        } else {
-            let cart = '';
-            for(let index = 0; index < shoppingCart.length; index++) {
-                let item = shoppingCart[index];
-                console.log(item.game);
-                cart += <ShoppingCartItem boxArt={item.game.boxArt} name={item.game.name} />
-            }
-            console.log(cart);
-            return cart;
-        }
+    function checkout() {
+        const date = new Date().toString();
+
+        const purchase = { orderDate: date, customer: user, gameOrders: shoppingCart  };
+        const body = JSON.stringify(purchase);
+        console.log(body);
+         fetch('https://teamnathanielrevatureproject2.azurewebsites.net/savePurchase', {method: 'post',
+         body: body, headers: {'Content-Type': 'application/json'}}).then((response) => {
+             return response.json();
+         }).then((data) => {
+             alert('Order made');
+             dispatch({type: 'emptyCart'});
+         })
     }
+
     return (
         <div>
             <div>Shopping Cart</div>
             <div className='container'>
                 {shoppingCart.length === 0 ? <h2>Nothing in the cart</h2> :
                 shoppingCart.map(cartItem => (<ShoppingCartItem key={cartItem.game.gameId} cartItem={cartItem} />))}
+            </div>
+            <div>
+                {shoppingCart.length > 0 && Object.keys(user).length > 0 &&
+                    <span onClick={checkout}><Box>Checkout</Box></span>}
             </div>
         </div>
     )
