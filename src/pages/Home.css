@@ -100,7 +100,7 @@
 }
 
 .megaman-section {
-    margin-top: 5rem;
+    margin-bottom: 2rem;
 }
 
 /* .game-image {
@@ -129,9 +129,14 @@
     100% {left: 450px}
 }
 
-.snake-section {
-    width: 600px;
-    height: 600px;
-    margin: 2rem auto;
-
+.snake-game {
+    width: 500px;
+    height: 500px;
 }
+
+.snake-section {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
