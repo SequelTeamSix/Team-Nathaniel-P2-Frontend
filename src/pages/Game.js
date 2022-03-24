@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function Game(props) {
-  const [game, setGame] = useState({});
+  const [game, setGame] = useState({series: {}});
 
   const [consoles, setConsoles] = useState([]);
 
@@ -110,6 +110,11 @@ function Game(props) {
          
         ))}
       </div>
+      {Object.keys(game.series).length > 0 &&
+          <div><div>Is part of series</div>
+            <div><Link to={'/series/'+game.series.name}><Box><img src={game.series.logo} className='series-image' />{game.series.name}</Box></Link></div>
+
+          </div>}
     </div>
   );
 }

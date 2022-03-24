@@ -17,6 +17,7 @@ function ShoppingCart() {
         console.log(body);
          fetch('https://teamnathanielrevatureproject2.azurewebsites.net/savePurchase', {method: 'post',
          body: body, headers: {'Content-Type': 'application/json'}}).then((response) => {
+             console.log(response)
              return response.json();
          }).then((data) => {
              alert('Order made');
