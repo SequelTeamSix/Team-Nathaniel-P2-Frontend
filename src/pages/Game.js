@@ -18,6 +18,8 @@ function Game(props) {
 
   const [consoles, setConsoles] = useState([]);
 
+  const [features, setFeatures] = useState([]);
+
   const { gameName } = useParams();
 
   const dispatch = useDispatch();
@@ -37,6 +39,7 @@ function Game(props) {
           console.log(response);
           setGame(response.data);
           setConsoles(response.data.console);
+          setFeatures(response.data.gameFeatures);
         }
       })
       .catch((error) => {
@@ -49,11 +52,11 @@ function Game(props) {
   }, []);
 
   function addToCart() {
-      dispatch({type: 'addToCart', gamePurchase: {game: game, quantity: 1}})
+    dispatch({ type: "addToCart", gamePurchase: { game: game, quantity: 1 } });
   }
 
   return (
-    <div className="container vh-100">
+    <div className="container">
       <div className="row mt-5">
         <Box className="col-12 col-md-4">
           <img src={game.boxArt} className="game-image" />
@@ -79,7 +82,7 @@ function Game(props) {
               <strong>Consoles:</strong>
             </p>
           </div>
-          <div className='col-md-4 consoles-section'>
+          <div className="col-md-4 consoles-section">
             {consoles.map((console) => (
               <Link
                 key={console.consoleId}
@@ -92,10 +95,19 @@ function Game(props) {
                 </Box>
               </Link>
             ))}
-
           </div>
-          <span onClick={addToCart}><Box>Add to Cart</Box></span>
+          <span onClick={addToCart}>
+            <Box className="add-cart-button">Add to Cart</Box>
+          </span>
         </div>
+      </div>
+      <div className="row mt-5">
+        <h3>Game Features</h3>
+        {features.map((feature) => (
+          
+          <p>{feature.body}</p>
+         
+        ))}
       </div>
     </div>
   );

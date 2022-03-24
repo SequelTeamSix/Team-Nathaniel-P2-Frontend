@@ -11,6 +11,7 @@ export default class Series extends React.Component {
       width: 0,
       series: { name: "", description: "", image: "", logo: "" },
       characters: [],
+      games: []
     };
   }
 
@@ -27,6 +28,7 @@ export default class Series extends React.Component {
         console.log(data);
         this.setState({ series: data });
         this.setState({ characters: data.character });
+        this.setState({ games: data.game});
       });
   };
 
@@ -63,6 +65,20 @@ export default class Series extends React.Component {
         <div className="row">
           <h2>Games in series</h2>
         </div>
+        <div className="row">
+            {this.state.games.map((game) => (
+              <Link
+                key={game.gameId}
+                className="col-12 col-sm-6 col-md-3 mt-4 link-decoration"
+                to={"/game/" + game.title}
+              >
+                <Box className="d-flex flex-column justify-content-end align-items-center character-box">
+                  <img src={game.boxArt} className="character-image" />
+                  <span className="mt-2">{game.title}</span>
+                </Box>
+              </Link>
+            ))}
+          </div>
       
       </div>
     );
