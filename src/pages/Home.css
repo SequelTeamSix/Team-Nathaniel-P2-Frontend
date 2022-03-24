@@ -86,12 +86,12 @@
 }
 
 .mario-image {
-    position: absolute;
-    right: 0;
+    position: relative;
+
     width: 250px;
-    animation-name: moveMario;
+    /* animation-name: moveMario;
     animation-duration: 3s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
 }
 
 @keyframes moveMario {
@@ -117,11 +117,11 @@
     height: 60px;
     position: relative;
     bottom: 57px;
-    left: 20px;
-    animation-name: moveBullet;
+    left: 100px;
+    /* animation-name: moveBullet;
     animation-duration: 1s;
     animation-delay: 1s;
-    animation-iteration-count: infinite; 
+    animation-iteration-count: infinite;  */
 }
 
 @keyframes moveBullet {
@@ -129,4 +129,9 @@
     100% {left: 450px}
 }
 
+.snake-section {
+    width: 600px;
+    height: 600px;
+    margin: 2rem auto;
 
+}

@@ -2,6 +2,7 @@ import "./Home.css";
 
 import Box from "../components/Box";
 import MegamanBox from "../components/MegamanBox";
+import Snake from "../components/Snake";
 
 import { useState } from "react";
 
@@ -110,6 +111,12 @@ function Home(props) {
         </Box>
       </div>
 
+      <h2 className='mt-5'>Ethan's Snake Game</h2>
+
+      <div className='row snake-section'>
+            <Snake className='snake-game'/>
+        </div>
+
       <div className="row d-flex justify-content-between megaman-section">
         <div className="col-md-4 d-flex align-items-center">
           <img
@@ -130,6 +137,10 @@ function Home(props) {
           </MegamanBox>
         </div>
       </div>
+        
+        
+        
+      
     </div>
   );
 }

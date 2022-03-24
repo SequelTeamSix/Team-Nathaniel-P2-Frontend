@@ -106,6 +106,7 @@ function Game(props) {
         {features.map((feature) => (
           
           <p>{feature.body}</p>
+          
          
         ))}
       </div>
