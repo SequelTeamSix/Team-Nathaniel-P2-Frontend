@@ -1,31 +1,29 @@
 import {useSelector} from "react-redux";
 import ShoppingCartItem from "../components/ShoppingCartItem";
+import Box from "../components/Box";
 
 
 function ShoppingCart() {
     const shoppingCart = useSelector((state) => state.shoppingCart);
+    const user = useSelector((state) => state.user);
 
-    function cartContents() {
-
-        if(shoppingCart.length === 0) {
-            return <h2>Nothing in the cart</h2>
-        } else {
-            let cart = '';
-            for(let index = 0; index < shoppingCart.length; index++) {
-                let item = shoppingCart[index];
-                console.log(item.game);
-                cart += <ShoppingCartItem boxArt={item.game.boxArt} name={item.game.name} />
-            }
-            console.log(cart);
-            return cart;
-        }
+    function checkout() {
+        const purchase = {}
+        const body = JSON.stringify(purchase);
+        // fetch('https://teamnathanielrevatureproject2.azurewebsites.net/savePurchases', {method: 'post',
+        // body: body, headers: {'Content-Type': 'application/json'}})
     }
+
     return (
         <div>
             <div>Shopping Cart</div>
             <div className='container'>
                 {shoppingCart.length === 0 ? <h2>Nothing in the cart</h2> :
                 shoppingCart.map(cartItem => (<ShoppingCartItem key={cartItem.game.gameId} cartItem={cartItem} />))}
+            </div>
+            <div>
+                {shoppingCart.length > 0 && Object.keys(user).length > 0 &&
+                    <span><Box>Checkout</Box></span>}
             </div>
         </div>
     )
