@@ -64,11 +64,10 @@
 .mario-rpg-image {
     width: 350px;
     height: 225px;
-    position: absolute;
-    left: 125px;
-    animation-name: moveRight;
+    position: relative;
+    /*animation-name: moveRight;
     animation-duration: 5s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
     /*animation-fill-mode: forwards;*/
 }
 
@@ -78,7 +77,7 @@
 }
 
 @keyframes moveRight {
-    0% {left: 125px}
+    0% {left: 200px}
     20% {left: 250px}
     40% {left: 325px}
     60% {left: 400px}
