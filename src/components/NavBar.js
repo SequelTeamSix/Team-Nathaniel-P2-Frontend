@@ -1,6 +1,6 @@
 import './NavBar.css';
 
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {useState} from 'react';
 import icon from '../images/ui/nav-bar-icon.jpg';
 import { useSelector, useDispatch } from "react-redux";
@@ -54,11 +54,11 @@ function NavBar() {
                 </button>
                 <div className={'collapse navbar-collapse ' + show} id="navbarCollapse">
                     <ul className='navbar-nav'>
-                        <li className='nav-logo'><Link className='nav-link' to='/home'><img width='150px' src={titleIcon} /></Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/game'> Games</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/console'>  Consoles</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/series'> Series</Link></li>
-                        <li className='nav-item'><Link className='nav-link' to='/character'> Characters</Link></li>
+                        <li className='nav-logo'><NavLink className='nav-link' activeClassName='active' to='/home'><img width='150px' src={titleIcon} /></NavLink></li>
+                        <li className='nav-item'><NavLink className='nav-link' activeClassName='active' to='/game'> Games</NavLink></li>
+                        <li className='nav-item'><NavLink className='nav-link' activeClassName='active' to='/console'>  Consoles</NavLink></li>
+                        <li className='nav-item'><NavLink className='nav-link' activeClassName='active' to='/series'> Series</NavLink></li>
+                        <li className='nav-item'><NavLink className='nav-link' activeClassName='active' to='/character'> Characters</NavLink></li>
                     </ul>
                 </div>
                 <ul className='navbar-nav ml-auto'>
