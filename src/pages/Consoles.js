@@ -29,7 +29,7 @@ export default class Consoles extends React.Component {
           {this.state.consoles.map((console) => (
             <Link
               key={console.consoleId}
-              className="col-6 col-md-4 col-lg-4 console-link"
+              className="col-12 col-md-4 col-lg-4 console-link"
               to={"/console/" + console.consoleName}
             >
               <Box className="cons-box d-flex flex-column justify-content-center">
