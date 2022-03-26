@@ -1,79 +1,9 @@
-.container {
-    scroll-behavior: smooth;
-}
-
-.game-image {
-    width: 100%;
-}
-
-.name-content{
-    text-align: left;
-}
-
-.align-center {
-    text-align: center;
-}
-
-.row {
-    margin-top: 20px;
-}
-
-.retro-deals-section {
-    height: 100%;
-    margin-top: 10rem;
-}
-
-.box-deal {
-    box-sizing: border-box;
-    width: 100%;
-    height: 400px;
-}
-
-.retro-deals-image {
-    box-sizing: border-box;
-    width: 50%;
-    height: 50%;
-}
-
-.bobomb-img {
-    width: 300px;
-    height: 100px;
-    /* animation-name: grow;
-    animation-duration: 1s;
-    animation-iteration-count: infinite; */
-}
-
-@keyframes grow {
-    from {transform: scale(.9)}
-    to {transform: scale(1)}
-}
-
-.img-flip {
-    transform: scaleX(-1);
-}
-
-.stars-image {
-    width: 100px;
-}
-
-.mario-pipe-image {
-    width: 450px;
-    z-index: 5;
-}
 
 .mario-rpg-image {
-    width: 350px;
-    height: 225px;
-    position: relative;
     /*animation-name: moveRight;
     animation-duration: 5s;
     animation-iteration-count: infinite; */
     /*animation-fill-mode: forwards;*/
-}
-
-.mario-boxart {
-    width: 350px;
-    height: 225px;
 }
 
 @keyframes moveRight {
@@ -86,9 +16,6 @@
 }
 
 .mario-image {
-    position: relative;
-
-    width: 250px;
     /* animation-name: moveMario;
     animation-duration: 3s;
     animation-iteration-count: infinite; */
@@ -99,44 +26,34 @@
     100% {right: 175px; bottom: 100px;}
 }
 
-.megaman-section {
-    margin-bottom: 2rem;
+.img-flip {
+    transform: scaleX(-1);
 }
 
-/* .game-image {
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+.retro-deals-section {
+    height: 100%;
 }
 
-.game-image:hover{
-    transform: rotateY(180deg);
-} */
-
-.bullet-image {
-    width: 70px;
-    height: 60px;
-    position: relative;
-    bottom: 57px;
-    left: 100px;
-    /* animation-name: moveBullet;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-iteration-count: infinite;  */
+.retro-deals-image {
+    height: 300px;
 }
 
-@keyframes moveBullet {
-    0% {left: 50px}
-    100% {left: 450px}
+.box-deal {
+    height: 100%;
+}
+
+.bobomb-section {
+    margin-top: 200px;
+}
+
+.snake-title {
+    margin-top: 150px;
 }
 
 .snake-game {
-    width: 500px;
-    height: 500px;
+    margin: 0 auto;
 }
 
-.snake-section {
-    width: 100%;
-    display: flex;
-    justify-content: start;
-}
+
+
 
