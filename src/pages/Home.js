@@ -98,7 +98,7 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="row d-flex mt-5 retro-deals-section">
+      <div className="row d-flex justify-content-center mt-5 retro-deals-section">
         <div className="col-md col-sm">
           <Box className="box-deal">
             <Link to={"/game/" + deal1}>
@@ -162,8 +162,8 @@ function Home(props) {
 
       <h2 className="snake-title">Ethan's Snake Game</h2>
 
-      <div className="row snake-section" >
-        <div className="row d-flex justify-content-center snake-game" style={{width: 460, height: 450}}>
+      <div className="row d-flex justify-content-center snake-section" >
+        <div className="row snake-game" style={{width: 460, height: 450}}>
             <Snake 
             />
         </div>
