@@ -46,8 +46,9 @@ function NavBar() {
 
 
     return (
-        <nav className='navbar navbar-expand-lg'>
+        <nav className='navbar navbar-expand-lg sticky-top bg-black'>
             <div className='container-fluid'>
+                
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onClick={showBar}>
                     <img src={icon} className='nav-icon' />

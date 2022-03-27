@@ -19,6 +19,8 @@ import pipeSprite from "../images/misc/mario-pipe.png";
 
 import { useDispatch } from "react-redux";
 
+import Carousel from "react-bootstrap/Carousel";
+
 function Home(props) {
   const [width, updateWidth] = useState(window.innerWidth);
   window.addEventListener("resize", changeSize);
@@ -36,49 +38,85 @@ function Home(props) {
   return (
     <div className="container">
       <div className="row mt-5">
-        <h1>Featured Product</h1>
+        <h1>Featured Products</h1>
       </div>
 
-      <div className="row mt-5 d-flex align-items-center mario-rpg-section">
-        <div className="col-4 col-md-4 col-sm-4">
-          <img src={pipeSprite} className="img-fluid mario-pipe-image" />
-        </div>
-        <div className="col-4 col-md-4 col-sm-4">
-          <Link
-            to={"/game/" + "Super Mario RPG: Legend of the Seven Stars"}
-            className="img-fluid mario-rpg-image"
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/8/89/SuperMarioRPGSNESCoverArtUS.jpg/220px-SuperMarioRPGSNESCoverArtUS.jpg"
-              className="img-fluid mario-boxart"
-              alt="super mario rpg"
-            />
-          </Link>
-        </div>
-      </div>
+      <Carousel className="featured-carousel">
+        <Carousel.Item>
+          <div className="row mt-5 align-items-center">
+            <div className="col-4 col-md-4 col-sm-4">
+              <img src={pipeSprite} className="img-fluid mario-pipe-image" />
+            </div>
+            <div className="col-4 col-md-4 col-sm-4">
+              <Link
+                to={"/game/" + "Super Mario RPG: Legend of the Seven Stars"}
+                className="img-fluid mario-rpg-image"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/8/89/SuperMarioRPGSNESCoverArtUS.jpg/220px-SuperMarioRPGSNESCoverArtUS.jpg"
+                  className="img-fluid mario-boxart"
+                  alt="super mario rpg"
+                />
+              </Link>
+            </div>
 
-      <div className="row mt-5 d-flex justify-content-between mario-section">
-        <div className="col-8 col-md-8 col-sm mt-3 mario-title ">
-          <h2>Super Mario RPG:</h2>
-          <p>Legend of the Seven Stars</p>
-          <img
-            src={starsSprite}
-            className="img-fluid"
-            width="200px"
-            alt="5 stars"
-          />
-        </div>
-        <div className="col-4 col-md-4 col-sm">
-          <img
-            src={marioSprite}
-            className="img-fluid mario-image"
-            width="250px"
-            alt="mario"
-          />
-        </div>
-      </div>
+            <div className="row mb-5 justify-content-between mario-section">
+              <div className="col-8 col-md-8 col-sm mt-3 mario-title ">
+                <h2 className="text-light">Super Mario RPG:</h2>
+                <p className="text-light">Legend of the Seven Stars</p>
+                <img
+                  src={starsSprite}
+                  className="img-fluid"
+                  width="200px"
+                  alt="5 stars"
+                />
+              </div>
+              <div className="col-4 col-md-4 col-sm">
+                <img
+                  src={marioSprite}
+                  className="img-fluid mario-image"
+                  width="250px"
+                  alt="mario"
+                />
+              </div>
+            </div>
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div className="row justify-content-around align-items-center megaman-section ">
+            <div className="col col-md-6 col-sm">
+              <img
+                src={megamanSprite}
+                className="img-fluid megaman-image img-flip"
+              />
+            </div>
+            <div className="col col-md-4 col-sm">
+              <MegamanBox>
+                <Link to={"/game/" + "Mega Man 2"}>
+                  <img
+                    src={megamanGame}
+                    className="img-fluid game-image"
+                    alt="megaman 2"
+                  />
+                </Link>
+              </MegamanBox>
+            </div>
+            <div class="row mb-5 justify-content-center">
+              <div className="col-8 col-md-8 col-sm mt-3">
+                <h2 className="text-light">Mega Man 2</h2>
+                <img
+                  src={starsSprite}
+                  className="img-fluid"
+                  width="200px"
+                  alt="5 stars"
+                />
+              </div>
+            </div>
+          </div>
+        </Carousel.Item>
+      </Carousel>
 
-      <div className="row d-flex align-items-center bobomb-section">
+      <div className="row align-items-center bobomb-section">
         <div className="col-3">
           <img
             src={bobombSprite}
@@ -98,8 +136,8 @@ function Home(props) {
         </div>
       </div>
 
-      <div className="row d-flex justify-content-center mt-5 retro-deals-section">
-        <div className="col-md col-sm">
+      <div className="row justify-content-center mt-5 retro-deals-section">
+        <div className="col-md col-sm-12">
           <Box className="box-deal">
             <Link to={"/game/" + deal1}>
               <img
@@ -118,13 +156,12 @@ function Home(props) {
             />
           </Box>
         </div>
-        <div className="col-md col-sm">
+        <div className="col-md col-sm-12">
           <Box className="box-deal">
             <Link to={"/game/" + deal2}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Legend_of_zelda_cover_%28with_cartridge%29_gold.png/220px-Legend_of_zelda_cover_%28with_cartridge%29_gold.png"
                 className="img-fluid retro-deals-image mt-2"
-               
                 alt="zelda"
               />
             </Link>
@@ -138,7 +175,7 @@ function Home(props) {
             />
           </Box>
         </div>
-        <div className="col-md col-sm" >
+        <div className="col-md col-sm-12">
           <Box className="box-deal">
             <Link to={"/game/" + deal3}>
               <img
@@ -157,33 +194,38 @@ function Home(props) {
             />
           </Box>
         </div>
-        
       </div>
 
       <h2 className="snake-title">Ethan's Snake Game</h2>
 
-      <div className="row d-flex justify-content-center snake-section" >
-        <div className="row snake-game" style={{width: 460, height: 450}}>
-            <Snake 
-            />
+      <div className="row justify-content-center snake-section">
+        <div className="row snake-game" style={{ width: 460, height: 450 }}>
+          <Snake />
         </div>
-        <div className="col-sm">
+        <div className="col-md col-sm-12">
           <img src={snakeSprite} className="img-fluid" />
         </div>
       </div>
 
-      <div className="row d-flex justify-content-around align-items-center pb-5 megaman-section ">
+      {/* <div className="row justify-content-around align-items-center pb-5 megaman-section ">
         <div className="col col-md-6 col-sm">
-          <img src={megamanSprite} className="img-fluid megaman-image img-flip" />
+          <img
+            src={megamanSprite}
+            className="img-fluid megaman-image img-flip"
+          />
         </div>
         <div className="col col-md-4 col-sm">
           <MegamanBox>
             <Link to={"/game/" + "Mega Man 2"}>
-              <img src={megamanGame} className="img-fluid game-image" alt="megaman 2" />
+              <img
+                src={megamanGame}
+                className="img-fluid game-image"
+                alt="megaman 2"
+              />
             </Link>
           </MegamanBox>
         </div>
-      </div>
+      </div> */}
       <div className="row"></div>
     </div>
   );
