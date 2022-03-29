@@ -1,4 +1,4 @@
-# Retrovure Backend
+# Retrovure Frontend
 
 ## Project Description
 
